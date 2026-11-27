@@ -10,7 +10,7 @@ import proformas.vista.DialogoConexion;
 import proformas.vista.VentanaPrincipal;
 
 /**
- * Punto de entrada del Sistema de Proformas de Importaciones Chafloque E.I.R.L.
+ * Punto de entrada del sistema ProformaTaller (Sistema de Proformas para Talleres)
  * <p>
  * Aplicativo de escritorio en Java SE (Swing + JDBC), sin frameworks.
  * Flujo de inicio:

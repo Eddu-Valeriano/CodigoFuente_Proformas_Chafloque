@@ -7,14 +7,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Administra la conexión del aplicativo con la base de datos chafloque_proformas.
+ * Administra la conexión del aplicativo con la base de datos proformataller.
  * <p>
  * Se mantiene una sola conexión abierta mientras el programa está en uso
  * (patrón Singleton). Si la conexión se pierde, por ejemplo porque el
  * servidor se reinició, se vuelve a abrir automáticamente en la siguiente
  * solicitud.
  * <p>
- * El aplicativo se conecta con el usuario {@code chafloque_app}, que solo
+ * El aplicativo se conecta con el usuario {@code proformataller_app}, que solo
  * tiene permiso de EJECUTAR procedimientos almacenados. Por eso todas las
  * operaciones pasan por los procedimientos de la base de datos.
  */

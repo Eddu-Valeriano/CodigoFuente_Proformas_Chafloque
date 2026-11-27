@@ -17,7 +17,7 @@ public final class Mensajes {
 
     /** Muestra un mensaje informativo. */
     public static void info(Component padre, String mensaje) {
-        JOptionPane.showMessageDialog(padre, mensaje, "Sistema de Proformas", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(padre, mensaje, "ProformaTaller", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /** Muestra un aviso de validación. */

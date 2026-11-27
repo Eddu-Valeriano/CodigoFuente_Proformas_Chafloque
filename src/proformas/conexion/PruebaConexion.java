@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Prueba de conexión por consola (avance del 30 % del aplicativo).
  * <p>
- * Se ejecuta con: {@code java -cp ChafloqueProformas.jar proformas.conexion.PruebaConexion}
+ * Se ejecuta con: {@code java -cp ProformaTaller.jar proformas.conexion.PruebaConexion}
  * <ol>
  *   <li>Lee config.properties.</li>
  *   <li>Abre la conexión con MySQL y muestra los datos del servidor.</li>
@@ -20,7 +20,7 @@ public class PruebaConexion {
 
     public static void main(String[] args) {
         ConfiguracionBD config = ConfiguracionBD.cargar();
-        System.out.println("=== PRUEBA DE CONEXION - SISTEMA DE PROFORMAS CHAFLOQUE ===");
+        System.out.println("=== PRUEBA DE CONEXION - PROFORMATALLER ===");
         System.out.println("URL            : " + config.getUrl());
         System.out.println("Usuario        : " + config.getUsuario());
         System.out.println();

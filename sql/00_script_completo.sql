@@ -2,7 +2,7 @@
 -- Ejecutar como root:  mysql -u root -p < 00_script_completo.sql
 
 -- =====================================================================
--- Proyecto  : Generación de proformas - Importaciones Chafloque E.I.R.L.
+-- Proyecto  : ProformaTaller - Sistema de Proformas para Talleres
 -- Script 01 : Creación de la base de datos, tablas, índices,
 --             tabla de auditoría y usuario del aplicativo
 -- Gestor    : MySQL 8.0  |  Motor: InnoDB
@@ -10,11 +10,14 @@
 --             01_creacion_bd.sql -> 02_programacion_bd.sql -> 03_datos_prueba.sql
 -- =====================================================================
 
-DROP DATABASE IF EXISTS chafloque_proformas;
-CREATE DATABASE chafloque_proformas
+-- Juego de caracteres de la sesión: evita tildes y eñes dañadas al cargar el script desde la consola
+SET NAMES utf8mb4;
+
+DROP DATABASE IF EXISTS proformataller;
+CREATE DATABASE proformataller
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_0900_ai_ci;
-USE chafloque_proformas;
+USE proformataller;
 
 -- ---------------------------------------------------------------------
 -- Tablas padre (catálogos y actores)
@@ -125,11 +128,11 @@ CREATE TABLE auditoria (
 -- Usuario del aplicativo: solo puede EJECUTAR procedimientos.
 -- No tiene permisos directos de SELECT, INSERT, UPDATE ni DELETE.
 -- ---------------------------------------------------------------------
-CREATE USER IF NOT EXISTS 'chafloque_app'@'localhost' IDENTIFIED BY 'Chafloque.2026';
-GRANT EXECUTE ON chafloque_proformas.* TO 'chafloque_app'@'localhost';
+CREATE USER IF NOT EXISTS 'proformataller_app'@'localhost' IDENTIFIED BY 'ProformaTaller.2026';
+GRANT EXECUTE ON proformataller.* TO 'proformataller_app'@'localhost';
 FLUSH PRIVILEGES;
 -- =====================================================================
--- Proyecto  : Generación de proformas - Importaciones Chafloque E.I.R.L.
+-- Proyecto  : ProformaTaller - Sistema de Proformas para Talleres
 -- Script 02 : Programación de la base de datos
 --             1) Procedimientos auxiliares
 --             2) Triggers de validación (BEFORE)
@@ -139,7 +142,7 @@ FLUSH PRIVILEGES;
 --             6) Procedimientos de reportes (12 consultas)
 -- Gestor    : MySQL 8.0
 -- =====================================================================
-USE chafloque_proformas;
+USE proformataller;
 
 -- =====================================================================
 -- 1) PROCEDIMIENTOS AUXILIARES
@@ -1229,13 +1232,13 @@ BEGIN
 END //
 DELIMITER ;
 -- =====================================================================
--- Proyecto  : Generación de proformas - Importaciones Chafloque E.I.R.L.
+-- Proyecto  : ProformaTaller - Sistema de Proformas para Talleres
 -- Script 03 : Datos de prueba (12 clientes, 5 mecánicos, 12 servicios,
 --             12 repuestos y 20 proformas con su detalle)
 -- Nota      : el total de cada proforma lo calculan los triggers del
 --             detalle; durante esta carga no se registra auditoría.
 -- =====================================================================
-USE chafloque_proformas;
+USE proformataller;
 
 SET @carga_inicial = 1;     -- desactiva la auditoría solo para esta carga
 
@@ -1257,7 +1260,7 @@ INSERT INTO mecanico (id_mecanico, nombre_mecanico) VALUES
   (1, 'Vicente Palacios Medina'),
   (2, 'Mauricio Lazo Herrera'),
   (3, 'Juan Pérez Condori'),
-  (4, 'Orlando Mechan Ruiz'),
+  (4, 'Orlando Medina Ruiz'),
   (5, 'Mauricio Medina Salas');
 
 INSERT INTO servicio (id_servicio, nombre_servicio, precio_unitario) VALUES

@@ -1,5 +1,5 @@
 @echo off
-REM Compila el aplicativo y genera dist\ChafloqueProformas.jar (requiere JDK 8 o superior en el PATH).
+REM Compila el aplicativo y genera dist\ProformaTaller.jar (requiere JDK 8 o superior en el PATH).
 cd /d "%~dp0"
 if exist build rmdir /s /q build
 mkdir build\classes
@@ -11,9 +11,9 @@ cd build\classes
 jar xf ..\..\lib\mariadb-java-client-2.7.6.jar
 del /q META-INF\MANIFEST.MF 2> nul
 cd ..\..
-jar cfe dist\ChafloqueProformas.jar proformas.Principal -C build\classes .
+jar cfe dist\ProformaTaller.jar proformas.Principal -C build\classes .
 if not exist dist\config.properties copy config.properties dist\ > nul
-echo Listo: dist\ChafloqueProformas.jar
+echo Listo: dist\ProformaTaller.jar
 goto fin
 :error
 echo Error de compilacion.

@@ -18,7 +18,7 @@ import javax.swing.border.Border;
  */
 public final class Estilo {
 
-    // Paleta basada en el azul del logo de Importaciones Chafloque E.I.R.L.
+    // Paleta de colores del sistema (azul institucional del logo de ProformaTaller)
     public static final Color AZUL         = new Color(0x2846A8);
     public static final Color AZUL_OSCURO  = new Color(0x17244A);
     public static final Color AZUL_MEDIO   = new Color(0x22346A);

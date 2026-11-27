@@ -1,11 +1,12 @@
 -- =====================================================================
--- Proyecto  : Generación de proformas - Importaciones Chafloque E.I.R.L.
+-- Proyecto  : ProformaTaller - Sistema de Proformas para Talleres
 -- Script 03 : Datos de prueba (12 clientes, 5 mecánicos, 12 servicios,
 --             12 repuestos y 20 proformas con su detalle)
 -- Nota      : el total de cada proforma lo calculan los triggers del
 --             detalle; durante esta carga no se registra auditoría.
 -- =====================================================================
-USE chafloque_proformas;
+SET NAMES utf8mb4;
+USE proformataller;
 
 SET @carga_inicial = 1;     -- desactiva la auditoría solo para esta carga
 
@@ -27,7 +28,7 @@ INSERT INTO mecanico (id_mecanico, nombre_mecanico) VALUES
   (1, 'Vicente Palacios Medina'),
   (2, 'Mauricio Lazo Herrera'),
   (3, 'Juan Pérez Condori'),
-  (4, 'Orlando Mechan Ruiz'),
+  (4, 'Orlando Medina Ruiz'),
   (5, 'Mauricio Medina Salas');
 
 INSERT INTO servicio (id_servicio, nombre_servicio, precio_unitario) VALUES

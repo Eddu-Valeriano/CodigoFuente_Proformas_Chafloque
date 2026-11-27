@@ -1,5 +1,5 @@
 -- =====================================================================
--- Proyecto  : Generación de proformas - Importaciones Chafloque E.I.R.L.
+-- Proyecto  : ProformaTaller - Sistema de Proformas para Talleres
 -- Script 01 : Creación de la base de datos, tablas, índices,
 --             tabla de auditoría y usuario del aplicativo
 -- Gestor    : MySQL 8.0  |  Motor: InnoDB
@@ -7,11 +7,14 @@
 --             01_creacion_bd.sql -> 02_programacion_bd.sql -> 03_datos_prueba.sql
 -- =====================================================================
 
-DROP DATABASE IF EXISTS chafloque_proformas;
-CREATE DATABASE chafloque_proformas
+-- Juego de caracteres de la sesión: evita tildes y eñes dañadas al cargar el script desde la consola
+SET NAMES utf8mb4;
+
+DROP DATABASE IF EXISTS proformataller;
+CREATE DATABASE proformataller
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_0900_ai_ci;
-USE chafloque_proformas;
+USE proformataller;
 
 -- ---------------------------------------------------------------------
 -- Tablas padre (catálogos y actores)
@@ -122,6 +125,6 @@ CREATE TABLE auditoria (
 -- Usuario del aplicativo: solo puede EJECUTAR procedimientos.
 -- No tiene permisos directos de SELECT, INSERT, UPDATE ni DELETE.
 -- ---------------------------------------------------------------------
-CREATE USER IF NOT EXISTS 'chafloque_app'@'localhost' IDENTIFIED BY 'Chafloque.2026';
-GRANT EXECUTE ON chafloque_proformas.* TO 'chafloque_app'@'localhost';
+CREATE USER IF NOT EXISTS 'proformataller_app'@'localhost' IDENTIFIED BY 'ProformaTaller.2026';
+GRANT EXECUTE ON proformataller.* TO 'proformataller_app'@'localhost';
 FLUSH PRIVILEGES;

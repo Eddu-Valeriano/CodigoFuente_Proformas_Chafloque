@@ -1,9 +1,10 @@
 -- =====================================================================
--- Proyecto  : Generación de proformas - Importaciones Chafloque E.I.R.L.
+-- Proyecto  : ProformaTaller - Sistema de Proformas para Talleres
 -- Script 04 : Las 12 consultas frecuentes del informe (versión SQL directa).
 --             En el aplicativo se ejecutan como procedimientos sp_rep01 ... sp_rep12.
 -- =====================================================================
-USE chafloque_proformas;
+SET NAMES utf8mb4;
+USE proformataller;
 
 -- Consulta 1: Búsqueda de un cliente por nombre
 SELECT id_cliente, nombre_cliente, telefono

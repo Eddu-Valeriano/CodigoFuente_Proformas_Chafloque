@@ -1,5 +1,5 @@
 -- =====================================================================
--- Proyecto  : Generación de proformas - Importaciones Chafloque E.I.R.L.
+-- Proyecto  : ProformaTaller - Sistema de Proformas para Talleres
 -- Script 02 : Programación de la base de datos
 --             1) Procedimientos auxiliares
 --             2) Triggers de validación (BEFORE)
@@ -9,7 +9,8 @@
 --             6) Procedimientos de reportes (12 consultas)
 -- Gestor    : MySQL 8.0
 -- =====================================================================
-USE chafloque_proformas;
+SET NAMES utf8mb4;
+USE proformataller;
 
 -- =====================================================================
 -- 1) PROCEDIMIENTOS AUXILIARES

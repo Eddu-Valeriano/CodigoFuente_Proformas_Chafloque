@@ -52,7 +52,7 @@ public class VentanaPrincipal extends JFrame {
     private final PanelAuditoria panelAuditoria = new PanelAuditoria();
 
     public VentanaPrincipal() {
-        super("Sistema de Proformas - Importaciones Chafloque E.I.R.L.");
+        super("ProformaTaller - Sistema de Proformas para Talleres");
         panelInicio = new PanelInicio(this::nuevaProformaDesdeInicio, () -> mostrar("Reportes"));
 
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -104,10 +104,10 @@ public class VentanaPrincipal extends JFrame {
         }
         JPanel textos = new JPanel(new BorderLayout(0, 2));
         textos.setOpaque(false);
-        JLabel nombre = new JLabel("Sistema de Proformas");
+        JLabel nombre = new JLabel("ProformaTaller");
         nombre.setFont(Estilo.fuente(Font.BOLD, 19f));
         nombre.setForeground(Estilo.AZUL_OSCURO);
-        JLabel empresa = new JLabel("Servicios y repuestos  ·  Importaciones Chafloque E.I.R.L.");
+        JLabel empresa = new JLabel("Sistema de Proformas para Talleres  ·  Servicios y repuestos");
         empresa.setFont(Estilo.fuente(Font.PLAIN, 12.5f));
         empresa.setForeground(Estilo.TEXTO_SUAVE);
         textos.add(nombre, BorderLayout.NORTH);
@@ -149,6 +149,8 @@ public class VentanaPrincipal extends JFrame {
         BotonMenu btnConexion = new BotonMenu("Conexión");
         btnConexion.addActionListener(e -> cambiarConexion());
         BotonMenu btnSalir = new BotonMenu("Salir");
+        btnConexion.setName("btnConexion");
+        btnSalir.setName("btnSalir");
         btnSalir.addActionListener(e -> salir());
         menu.add(btnConexion);
         menu.add(btnSalir);

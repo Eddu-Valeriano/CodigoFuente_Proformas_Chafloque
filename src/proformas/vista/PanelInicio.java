@@ -58,7 +58,7 @@ public class PanelInicio extends JPanel {
         cabecera.setOpaque(false);
         cabecera.add(Estilo.titulo("Bienvenido al sistema de proformas"), BorderLayout.NORTH);
         cabecera.add(Estilo.subtitulo(Character.toUpperCase(hoy.charAt(0)) + hoy.substring(1)
-                + "  ·  Importaciones Chafloque E.I.R.L., Arequipa"), BorderLayout.SOUTH);
+                + "  ·  Sistema de Proformas para Talleres"), BorderLayout.SOUTH);
 
         JPanel acciones = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
         acciones.setOpaque(false);

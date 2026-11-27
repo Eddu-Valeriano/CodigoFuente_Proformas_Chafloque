@@ -22,9 +22,9 @@ public class ConfiguracionBD {
 
     private String host = "localhost";
     private int puerto = 3306;
-    private String baseDatos = "chafloque_proformas";
-    private String usuario = "chafloque_app";
-    private String clave = "Chafloque.2026";
+    private String baseDatos = "proformataller";
+    private String usuario = "proformataller_app";
+    private String clave = "ProformaTaller.2026";
 
     /**
      * Lee la configuración desde {@code config.properties}.
@@ -65,7 +65,7 @@ public class ConfiguracionBD {
         props.setProperty("db.usuario", usuario);
         props.setProperty("db.clave", clave);
         try (OutputStream salida = new FileOutputStream(ARCHIVO)) {
-            props.store(salida, "Conexion a MySQL - Sistema de Proformas Chafloque");
+            props.store(salida, "Conexion a MySQL - ProformaTaller");
         }
     }
 
@@ -77,7 +77,7 @@ public class ConfiguracionBD {
      *   <li>{@code characterEncoding}: tildes y eñes correctas.</li>
      * </ul>
      *
-     * @return URL de conexión, por ejemplo {@code jdbc:mysql://localhost:3306/chafloque_proformas?...}
+     * @return URL de conexión, por ejemplo {@code jdbc:mysql://localhost:3306/proformataller?...}
      */
     public String getUrl() {
         return "jdbc:mysql://" + host + ":" + puerto + "/" + baseDatos
